@@ -1,0 +1,440 @@
+/* =====================================================
+   style.css — shared stylesheet for all pages
+   Design tokens
+   ----------------------------------------------------
+   --navy   : primary ink / header & footer background
+   --slate  : secondary panels / nav background
+   --amber  : accent / hover / links / buttons
+   --sage   : secondary accent / success / tags
+   --paper  : page background
+   --ink    : body text
+   --ink-lt : muted text
+   ===================================================== */
+
+:root {
+  --navy: #16243d;
+  --slate: #3b587a;
+  --amber: #e3a438;
+  --sage: #8faf8b;
+  --paper: #f4f5f0;
+  --card: #ffffff;
+  --ink: #1c2733;
+  --ink-lt: #5b6b7c;
+  --danger: #c0553a;
+  --radius: 10px;
+  --shadow: 0 6px 18px rgba(22, 36, 61, 0.08);
+  --font-display: "Fraunces", Georgia, "Hiragino Mincho ProN", serif;
+  --font-body: "Inter", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--slate); }
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 2px;
+}
+
+/* ---------- page shell (CSS Grid) ---------- */
+.page {
+  display: grid;
+  grid-template-columns: 220px 1fr 280px;
+  grid-template-areas:
+    "header header header"
+    "nav    nav    nav"
+    "aside-l main aside-r"
+    "footer footer footer";
+  min-height: 100vh;
+}
+
+/* ---------- header ---------- */
+.site-header {
+  grid-area: header;
+  background: var(--navy);
+  color: var(--paper);
+  padding: 28px 32px 22px;
+}
+
+.site-header .eyebrow {
+  font-family: var(--font-mono);
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  color: var(--amber);
+  text-transform: uppercase;
+  margin: 0 0 6px;
+}
+
+.site-header h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin: 0 0 4px;
+}
+
+.site-header p {
+  margin: 0;
+  color: #c8d3e0;
+  font-size: 0.95rem;
+}
+
+/* ---------- nav ---------- */
+.site-nav {
+  grid-area: nav;
+  background: var(--slate);
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 4px;
+  margin: 0;
+  padding: 0 24px;
+}
+
+.site-nav a {
+  position: relative;
+  display: inline-block;
+  padding: 14px 18px;
+  color: #eef1f5;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 8px;
+  height: 2px;
+  background: var(--amber);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.site-nav a:hover::after,
+.site-nav a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--amber);
+}
+
+/* ---------- sidebars ---------- */
+.sidebar {
+  padding: 28px 22px;
+}
+
+.sidebar h2 {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-lt);
+  margin: 0 0 14px;
+}
+
+.sidebar-left {
+  grid-area: aside-l;
+  background: #eef1e9;
+  border-right: 1px solid #e0e4da;
+}
+
+.sidebar-left ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.sidebar-left a {
+  display: block;
+  padding: 10px 12px;
+  background: var(--card);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 0.92rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.sidebar-left a:hover {
+  transform: translateX(3px);
+  color: var(--slate);
+}
+
+.sidebar-left a::after {
+  content: " ↗";
+  color: var(--amber);
+}
+
+.sidebar-right {
+  grid-area: aside-r;
+  background: #eef1f6;
+  border-left: 1px solid #dfe4ec;
+}
+
+/* ---------- main content ---------- */
+.main-content {
+  grid-area: main;
+  padding: 36px 40px;
+}
+
+.main-content h2 {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  margin-top: 0;
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  margin-bottom: 24px;
+}
+
+/* ---------- homepage ---------- */
+.profile {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.profile img { border-radius: var(--radius); box-shadow: var(--shadow); }
+
+.tag-list { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--sage);
+  color: #16281a;
+}
+
+@media (max-width: 640px) {
+  .profile { grid-template-columns: 1fr; }
+}
+
+/* ---------- portfolio table ---------- */
+.portfolio-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.portfolio-table caption {
+  text-align: left;
+  font-size: 0.85rem;
+  color: var(--ink-lt);
+  margin-bottom: 10px;
+}
+
+.portfolio-table th,
+.portfolio-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid #e7e9e4;
+  font-size: 0.94rem;
+}
+
+.portfolio-table thead th {
+  background: var(--navy);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.portfolio-table tbody tr:nth-child(even) { background: #f7f8f3; }
+.portfolio-table tbody tr:hover { background: #fbeed7; }
+
+.chip {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 3px 10px;
+  border-radius: 999px;
+  color: #16243d;
+  margin: 2px 4px 2px 0;
+}
+.chip-html  { background: #f2c98a; }
+.chip-css   { background: #a9c6e8; }
+.chip-js    { background: #e3a438; color: #2a1c00; }
+.chip-python{ background: #8faf8b; }
+.chip-git   { background: #d3a0b0; }
+
+/* ---------- trivia / BMI calculator ---------- */
+.calc-form {
+  display: grid;
+  gap: 14px;
+  max-width: 360px;
+}
+
+.calc-form label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.calc-form input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #cfd6de;
+  font-size: 1rem;
+  font-family: var(--font-body);
+}
+
+.btn {
+  justify-self: start;
+  background: var(--navy);
+  color: var(--paper);
+  border: none;
+  padding: 11px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.btn:hover { background: var(--slate); transform: translateY(-1px); }
+
+#bmiResult {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: var(--radius);
+  background: #eef1e9;
+  font-size: 1.02rem;
+  display: none;
+}
+
+#bmiResult.show { display: block; }
+
+#bmiResult .bmi-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--navy);
+}
+
+.badge-category {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 4px 12px;
+  border-radius: 999px;
+  color: #16243d;
+}
+.badge-under  { background: #a9c6e8; }
+.badge-normal { background: #8faf8b; }
+.badge-over   { background: #e3a438; }
+.badge-obese  { background: #d98b6a; }
+
+.field-error {
+  color: var(--danger);
+  font-size: 0.82rem;
+  min-height: 1.1em;
+  margin-top: 2px;
+}
+
+/* ---------- contact form (right sidebar) ---------- */
+.contact-form {
+  display: grid;
+  gap: 12px;
+}
+
+.contact-form label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 9px 10px;
+  border-radius: 8px;
+  border: 1px solid #c6cddb;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+}
+
+.contact-form textarea { resize: vertical; min-height: 80px; }
+
+.contact-form .btn { width: 100%; justify-self: stretch; text-align: center; }
+
+#formStatus {
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+#formStatus.success { color: #3e6b46; }
+#formStatus.error { color: var(--danger); }
+
+/* ---------- footer ---------- */
+.site-footer {
+  grid-area: footer;
+  background: var(--navy);
+  color: #c8d3e0;
+  padding: 20px 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.site-footer a {
+  color: var(--amber);
+  text-decoration: none;
+  margin-left: 14px;
+}
+
+.site-footer a:hover { text-decoration: underline; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside-l"
+      "aside-r"
+      "footer";
+  }
+  .site-nav ul { flex-wrap: wrap; padding: 0 12px; }
+  .main-content { padding: 28px 20px; }
+}
