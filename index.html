@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>悠人's Site — Home</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="page">
+
+  <header class="site-header">
+    <p class="eyebrow">Information Science 1 — Web Development Project</p>
+    <h1>悠人's Site</h1>
+    <p>College of Information Science and Engineering, Ritsumeikan University</p>
+  </header>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <ul>
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="trivia.html">Trivia</a></li>
+    </ul>
+  </nav>
+
+  <aside class="sidebar sidebar-left">
+    <h2>Useful Links</h2>
+    <ul>
+      <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+      <li><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">freeCodeCamp</a></li>
+      <li><a href="https://docs.github.com/" target="_blank" rel="noopener noreferrer">GitHub Docs</a></li>
+      <li><a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer">W3Schools</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <h2>About Me</h2>
+    <section class="card profile">
+      <img src="assets/heritage.jpg" alt="<!-- 世界遺産の名前をここに記入 -->" width="180" height="180">
+      <div>
+        <p>
+          Hi, I'm 悠人 — a student in the College of Information Science and Engineering
+          at Ritsumeikan University. I'm currently learning the fundamentals of web
+          development, from HTML &amp; CSS layouts to JavaScript interactions.
+        </p>
+        <p>
+          Outside of class, I worked as a B2B sales representative (appointer) at an
+          IT venture company in Osaka, handling new-client outreach for a SaaS product.
+          I set my own monthly target of 10 appointments and hit it in my third month.
+          See the Portfolio page for the full story.
+          <!-- 趣味はここに追記してください -->
+        </p>
+        <ul class="tag-list">
+          <li class="tag">Web Development</li>
+          <li class="tag">B2B Sales</li>
+          <li class="tag">SaaS</li>
+          <li class="tag"><!-- 趣味タグ --></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0;">What this site covers</h2>
+      <p>
+        This three-page site was built for the Week 14 exercise: a <strong>Homepage</strong>
+        (this page), a <strong>Portfolio</strong> page listing projects in a styled table, and
+        a <strong>Trivia</strong> page with a small interactive BMI calculator written in
+        JavaScript. Every page shares the same header, navigation bar, sidebars, and footer.
+      </p>
+    </section>
+  </main>
+
+  <aside class="sidebar sidebar-right">
+    <h2>Contact Me</h2>
+    <form class="contact-form" id="contactForm" novalidate>
+      <div>
+        <label for="cf-name">Name</label>
+        <input type="text" id="cf-name" name="name" placeholder="Your name">
+        <p class="field-error" id="cf-name-error"></p>
+      </div>
+      <div>
+        <label for="cf-email">Email</label>
+        <input type="email" id="cf-email" name="email" placeholder="you@example.com">
+        <p class="field-error" id="cf-email-error"></p>
+      </div>
+      <div>
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" name="message" placeholder="Say hello..."></textarea>
+        <p class="field-error" id="cf-message-error"></p>
+      </div>
+      <button type="submit" class="btn">Send message</button>
+      <p id="formStatus" role="status"></p>
+    </form>
+  </aside>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 悠人 — created July 14, 2026</p>
+    <nav aria-label="External profiles">
+      <a href="https://github.com/yuto-f04/my-portfolio-site-W14" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </nav>
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

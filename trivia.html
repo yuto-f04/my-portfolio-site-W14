@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>悠人's Site — Trivia</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="page">
+
+  <header class="site-header">
+    <p class="eyebrow">Information Science 1 — Web Development Project</p>
+    <h1>悠人's Site</h1>
+    <p>College of Information Science and Engineering, Ritsumeikan University</p>
+  </header>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="trivia.html" aria-current="page">Trivia</a></li>
+    </ul>
+  </nav>
+
+  <aside class="sidebar sidebar-left">
+    <h2>Useful Links</h2>
+    <ul>
+      <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+      <li><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">freeCodeCamp</a></li>
+      <li><a href="https://docs.github.com/" target="_blank" rel="noopener noreferrer">GitHub Docs</a></li>
+      <li><a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer">W3Schools</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <h2>Trivia — BMI Calculator</h2>
+    <section class="card">
+      <p>Enter your height and weight below. JavaScript will compute your BMI and show which category it falls into.</p>
+
+      <form class="calc-form" id="bmiForm">
+        <div>
+          <label for="height">Height (cm)</label>
+          <input type="number" id="height" name="height" min="1" step="0.1" placeholder="e.g. 170" required>
+        </div>
+        <div>
+          <label for="weight">Weight (kg)</label>
+          <input type="number" id="weight" name="weight" min="1" step="0.1" placeholder="e.g. 60" required>
+        </div>
+        <p class="field-error" id="bmiError"></p>
+        <div style="display:flex; gap:10px;">
+          <button type="submit" class="btn">Calculate BMI</button>
+          <button type="reset" class="btn" style="background:var(--ink-lt);">Reset</button>
+        </div>
+      </form>
+
+      <div id="bmiResult" aria-live="polite"></div>
+
+      <p style="margin-top:22px; font-size:0.85rem; color:var(--ink-lt);">
+        Reference ranges — Underweight: below 18.5 · Normal: 18.5–24.9 ·
+        Overweight: 25–29.9 · Obese: 30 and above.
+      </p>
+    </section>
+  </main>
+
+  <aside class="sidebar sidebar-right">
+    <h2>Contact Me</h2>
+    <form class="contact-form" id="contactForm" novalidate>
+      <div>
+        <label for="cf-name">Name</label>
+        <input type="text" id="cf-name" name="name" placeholder="Your name">
+        <p class="field-error" id="cf-name-error"></p>
+      </div>
+      <div>
+        <label for="cf-email">Email</label>
+        <input type="email" id="cf-email" name="email" placeholder="you@example.com">
+        <p class="field-error" id="cf-email-error"></p>
+      </div>
+      <div>
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" name="message" placeholder="Say hello..."></textarea>
+        <p class="field-error" id="cf-message-error"></p>
+      </div>
+      <button type="submit" class="btn">Send message</button>
+      <p id="formStatus" role="status"></p>
+    </form>
+  </aside>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 悠人 — created July 14, 2026</p>
+    <nav aria-label="External profiles">
+      <a href="https://github.com/yuto-f04/my-portfolio-site-W14" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </nav>
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

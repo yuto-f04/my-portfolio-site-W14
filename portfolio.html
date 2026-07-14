@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>悠人's Site — Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="page">
+
+  <header class="site-header">
+    <p class="eyebrow">Information Science 1 — Web Development Project</p>
+    <h1>悠人's Site</h1>
+    <p>College of Information Science and Engineering, Ritsumeikan University</p>
+  </header>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+      <li><a href="trivia.html">Trivia</a></li>
+    </ul>
+  </nav>
+
+  <aside class="sidebar sidebar-left">
+    <h2>Useful Links</h2>
+    <ul>
+      <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+      <li><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">freeCodeCamp</a></li>
+      <li><a href="https://docs.github.com/" target="_blank" rel="noopener noreferrer">GitHub Docs</a></li>
+      <li><a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer">W3Schools</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <h2>Portfolio</h2>
+    <section class="card">
+      <p>Key milestones from my sales internship at an IT venture company in Osaka.</p>
+
+      <table class="portfolio-table">
+        <caption>5 milestones from my sales internship · fields: No., Milestone, Description, Skill, Date</caption>
+        <thead>
+          <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Milestone</th>
+            <th scope="col">Description</th>
+            <th scope="col">Skill</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>営業職として着任</td>
+            <td>大阪のIT系ベンチャー企業にて、法人営業（アポインター）として勤務開始。B2B向けSaaS商材の新規開拓を担当。</td>
+            <td><span class="chip">新規開拓</span></td>
+            <td>2025年10月</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>独自目標を設定</td>
+            <td>会社から与えられたノルマとは別に、自ら「月間アポイント数10件」という目標を設定。</td>
+            <td><span class="chip">目標設定</span></td>
+            <td>2025年10月</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>架電・アポイント獲得業務</td>
+            <td>企業の意思決定者に対して電話でアプローチし、ニーズをヒアリングしながらアポイントを獲得。</td>
+            <td><span class="chip">テレアポ／ヒアリング</span></td>
+            <td>2025年10月〜2026年4月</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>自主目標を達成</td>
+            <td>着任から3か月目にあたる2025年12月、自ら設定した月間アポイント数10件を達成。</td>
+            <td><span class="chip">目標達成</span></td>
+            <td>2025年12月</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>振り返りと改善</td>
+            <td>契約終了（2026年4月）までの期間、トークスクリプトやアプローチ先リストの精査など、成果につながった要因を分析・改善。</td>
+            <td><span class="chip">改善／PDCA</span></td>
+            <td>2026年1月〜2026年4月</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <aside class="sidebar sidebar-right">
+    <h2>Contact Me</h2>
+    <form class="contact-form" id="contactForm" novalidate>
+      <div>
+        <label for="cf-name">Name</label>
+        <input type="text" id="cf-name" name="name" placeholder="Your name">
+        <p class="field-error" id="cf-name-error"></p>
+      </div>
+      <div>
+        <label for="cf-email">Email</label>
+        <input type="email" id="cf-email" name="email" placeholder="you@example.com">
+        <p class="field-error" id="cf-email-error"></p>
+      </div>
+      <div>
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" name="message" placeholder="Say hello..."></textarea>
+        <p class="field-error" id="cf-message-error"></p>
+      </div>
+      <button type="submit" class="btn">Send message</button>
+      <p id="formStatus" role="status"></p>
+    </form>
+  </aside>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 悠人 — created July 14, 2026</p>
+    <nav aria-label="External profiles">
+      <a href="https://github.com/yuto-f04/my-portfolio-site-W14" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </nav>
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
